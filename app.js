@@ -2,8 +2,8 @@ const express = require('express');
 const logger = require('morgan');
 
 const app = express();
-const ERROR_CODE = 401;
-const ERROR_MESSAGE = 'Unauthorized';
+const ERROR_CODE = process.env.ERROR_CODE || 401;
+const ERROR_MESSAGE = process.env.ERROR_MESSAGE || 'Unauthorized';
 
 app.use(logger('dev'));
 app.use(express.json());
